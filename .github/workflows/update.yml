@@ -1,0 +1,90 @@
+name: Update Proton binaries
+
+on:
+  schedule:
+    - cron: "23 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-proton
+
+jobs:
+  update:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Update upstream release pins
+        run: |
+          python3 -B -m unittest discover -s tests
+          python3 scripts/update.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Check for updates
+        id: changes
+        run: |
+          if ! git diff --quiet -- releases.json; then
+            git add releases.json
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: cachix/install-nix-action@382a9ed9481c7c1f94f68b72ef105b3417c73877 # v32.1.0
+        if: steps.changes.outputs.updated == 'true'
+
+      - name: Validate flake
+        if: steps.changes.outputs.updated == 'true'
+        shell: bash
+        run: |
+          nix flake check --all-systems --no-build
+          changed=$(git show HEAD:releases.json | jq -sc '
+            .[0] as $old | [
+              .[1] | to_entries[] | .key as $name | .value as $release
+              | $release.assets | to_entries[] | .key as $system
+              | select(
+                  (.value | del(.publishedAt)) != ($old[$name].assets[$system] | del(.publishedAt))
+                  or $release.versions[$system] != $old[$name].versions[$system]
+                )
+              | {name: $name, system: $system}
+            ]
+          ' - releases.json)
+          if [[ "$changed" != "[]" ]]; then
+            expression=$(cat <<'NIX'
+              let
+                flake = builtins.getFlake (toString ./.);
+                packages = flake.packages // {
+                  aarch64-linux = import ./packages.nix {
+                    pkgs = flake.inputs.nixpkgs.legacyPackages.x86_64-linux.pkgsCross.aarch64-multiplatform;
+                  };
+                };
+              in
+              map ({ name, system }: packages.${system}.${name}.steamcompattool)
+                (builtins.fromJSON (builtins.getEnv "CHANGED_PACKAGES"))
+          NIX
+            )
+            paths=$(CHANGED_PACKAGES="$changed" nix build --impure --no-link --print-out-paths --max-jobs 2 --expr "$expression")
+            mapfile -t outputs <<< "$paths"
+            python3 - "${outputs[@]}" <<'PY'
+          import ast
+          from pathlib import Path
+          import sys
+
+          for output in sys.argv[1:]:
+              proton = Path(output) / "proton"
+              ast.parse(proton.read_bytes(), filename=str(proton))
+          PY
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.updated == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update upstream Proton binaries"
+          git push origin HEAD

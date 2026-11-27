@@ -1,0 +1,145 @@
+{
+  "dwproton-bin": {
+    "assets": {
+      "x86_64-linux": {
+        "hash": "sha512-TLphL55LoM9si8xTSfMZ0HsZ/fRpkYAhXHPQrI/+WaDQMlcTt00eXUOvGlLg/T8r6L9ASJi5CjFIR8ET9GSIqA==",
+        "publishedAt": "2026-11-13T15:12:19Z",
+        "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-17/dwproton-11.0-17-x86_64.tar.xz"
+      }
+    },
+    "homepage": "https://dawn.wine/dawn-winery/dwproton",
+    "versions": {
+      "x86_64-linux": "dwproton-11.0-17"
+    }
+  },
+  "proton-cachyos-bin": {
+    "assets": {
+      "aarch64-linux": {
+        "hash": "sha256-woSfYgJqSUv2pDo2s1pjs7eW1IDRQe6hJdEXtA8PQQc=",
+        "publishedAt": "2026-10-20T21:21:40Z",
+        "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20261015-slr/proton-cachyos-11.0-20261015-slr-arm64.tar.xz"
+      },
+      "x86_64-linux": {
+        "hash": "sha256-NeFuq2NnJOPteqji28M+uOEC4MY7vCi1o5r1RMddW9M=",
+        "publishedAt": "2026-10-20T21:21:40Z",
+        "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20261015-slr/proton-cachyos-11.0-20261015-slr-x86_64.tar.xz"
+      }
+    },
+    "homepage": "https://github.com/CachyOS/proton-cachyos",
+    "versions": {
+      "aarch64-linux": "cachyos-11.0-20261015-slr",
+      "x86_64-linux": "cachyos-11.0-20261015-slr"
+    }
+  },
+  "proton-cachyos-v3-bin": {
+    "assets": {
+      "x86_64-linux": {
+        "hash": "sha256-TxJb19LHJNx9LQVTykLxjGcCKmAG6GKf5/eNFgqevfs=",
+        "publishedAt": "2026-10-20T21:21:40Z",
+        "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20261015-slr/proton-cachyos-11.0-20261015-slr-x86_64_v3.tar.xz"
+      }
+    },
+    "homepage": "https://github.com/CachyOS/proton-cachyos",
+    "versions": {
+      "x86_64-linux": "cachyos-11.0-20261015-slr"
+    }
+  },
+  "proton-em-bin": {
+    "assets": {
+      "x86_64-linux": {
+        "hash": "sha256-W/2BzrQjs2W1R4A9Q0/VFX3v6uURYLv2ZXJlvENAWG0=",
+        "publishedAt": "2026-04-11T18:58:28Z",
+        "url": "https://github.com/BananaWorks07/Proton/releases/download/EM-10.0-37-HDR/proton-EM-10.0-37-HDR.tar.xz"
+      }
+    },
+    "homepage": "https://github.com/BananaWorks07/Proton",
+    "versions": {
+      "x86_64-linux": "EM-10.0-37-HDR"
+    }
+  },
+  "proton-ge-bin": {
+    "assets": {
+      "aarch64-linux": {
+        "hash": "sha256-9jU/RBe9jBFI19sYvDg9jixZxAPjZ0Jf2LnaquzC+tg=",
+        "publishedAt": "2026-11-23T10:19:36Z",
+        "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-14/GE-Proton11-14-aarch64.tar.gz"
+      },
+      "x86_64-linux": {
+        "hash": "sha256-JrzqMyS2je5ov2ubAF9EJc25wphy4SbXkN9av+vjMqg=",
+        "publishedAt": "2026-11-23T10:19:36Z",
+        "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-14/GE-Proton11-14-x86_64.tar.gz"
+      }
+    },
+    "homepage": "https://github.com/GloriousEggroll/proton-ge-custom",
+    "versions": {
+      "aarch64-linux": "GE-Proton11-14",
+      "x86_64-linux": "GE-Proton11-14"
+    }
+  },
+  "proton-rtsp-bin": {
+    "assets": {
+      "x86_64-linux": {
+        "hash": "sha256-tS8jGhFunQ8fnRn06HD/hDkvNdquAjkab3n9+cpYNBU=",
+        "publishedAt": "2026-09-09T05:11:31Z",
+        "url": "https://github.com/SpookySkeletons/proton-rtsp/releases/download/proton-rtsp-11.0-20260609-4/proton-rtsp-11.0-20260609-4.tar.gz"
+      }
+    },
+    "homepage": "https://github.com/SpookySkeletons/proton-rtsp",
+    "versions": {
+      "x86_64-linux": "proton-rtsp-11.0-20260609-4"
+    }
+  },
+  "proton-tkg-bin": {
+    "assets": {
+      "x86_64-linux": {
+        "hash": "sha256-cKaTibZ4xwXQdkZZ3smndSS4VaZh/HTY5c09xbtm9Qw=",
+        "publishedAt": "2022-04-19T13:49:44Z",
+        "revision": "63001535:2022-04-19T13:44:26Z",
+        "url": "https://github.com/Frogging-Family/wine-tkg-git/releases/download/7.6.r12.g51472395/proton_tkg_7.6.r12.g51472395.release.tar.gz"
+      }
+    },
+    "homepage": "https://github.com/Frogging-Family/wine-tkg-git",
+    "versions": {
+      "x86_64-linux": "7.6.r12.g51472395"
+    }
+  },
+  "proton-wineland-bin": {
+    "assets": {
+      "x86_64-linux": {
+        "hash": "sha256-s2SO+dDmTtfYcwvfkSpgCMDaFkF4yjE+9jWrnpvkBCg=",
+        "publishedAt": "2026-11-24T13:18:15Z",
+        "url": "https://github.com/nanomatters/proton-salkim/releases/download/wineland-11.0-20261124/proton-wineland-11.0-20261124-x86_64.tar.xz"
+      }
+    },
+    "homepage": "https://github.com/nanomatters/proton-salkim",
+    "versions": {
+      "x86_64-linux": "wineland-11.0-20261124"
+    }
+  },
+  "proton-wineland-v3-bin": {
+    "assets": {
+      "x86_64-linux": {
+        "hash": "sha256-yP8K+pa4nmmjMV3heYBApdOiWdvLXgA+HvCcVB7ZJuA=",
+        "publishedAt": "2026-11-24T13:18:15Z",
+        "url": "https://github.com/nanomatters/proton-salkim/releases/download/wineland-11.0-20261124/proton-wineland-11.0-20261124-x86_64_v3.tar.xz"
+      }
+    },
+    "homepage": "https://github.com/nanomatters/proton-salkim",
+    "versions": {
+      "x86_64-linux": "wineland-11.0-20261124"
+    }
+  },
+  "proton-wineland-wow64-bin": {
+    "assets": {
+      "x86_64-linux": {
+        "hash": "sha256-Wsww7FNkwsle8w+lpJtChjSDHcvHJZ2LAxiWRmw+6l0=",
+        "publishedAt": "2026-11-24T13:18:15Z",
+        "url": "https://github.com/nanomatters/proton-salkim/releases/download/wineland-11.0-20261124/proton-wineland-11.0-20261124-x86_64_wow64.tar.xz"
+      }
+    },
+    "homepage": "https://github.com/nanomatters/proton-salkim",
+    "versions": {
+      "x86_64-linux": "wineland-11.0-20261124"
+    }
+  }
+}
