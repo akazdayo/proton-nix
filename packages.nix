@@ -5,6 +5,18 @@ let
   system = stdenvNoCC.hostPlatform.system;
   releases = lib.importJSON ./releases.json;
   available = lib.filterAttrs (_: release: release.assets ? ${system}) releases;
+  displayNames = {
+    proton-ge-bin = "GE-Proton";
+    proton-cachyos-bin = "Proton-CachyOS";
+    proton-cachyos-v3-bin = "Proton-CachyOS v3";
+    proton-wineland-bin = "Proton-Wineland";
+    proton-wineland-v3-bin = "Proton-Wineland v3";
+    proton-wineland-wow64-bin = "Proton-Wineland WoW64";
+    proton-em-bin = "Proton-EM";
+    proton-rtsp-bin = "Proton-RTSP";
+    dwproton-bin = "dwproton";
+    proton-tkg-bin = "Proton Tkg";
+  };
 in
 lib.mapAttrs (
   pname: release:
@@ -44,7 +56,7 @@ lib.mapAttrs (
 
       # Steam stores this key per game, so it must survive upstream version changes.
       manifest="$toolDir/compatibilitytool.vdf"
-      python3 ${./scripts/steam_manifest.py} "$manifest" "${pname}" > "$manifest.new"
+      python3 ${./scripts/steam_manifest.py} "$manifest" "${pname}" "${displayNames.${pname}}" > "$manifest.new"
       mv "$manifest.new" "$manifest"
 
       # SteamPipe repairs must run before the tool is moved into the read-only store.
