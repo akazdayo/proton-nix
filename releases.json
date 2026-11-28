@@ -106,40 +106,40 @@
   "proton-wineland-bin": {
     "assets": {
       "x86_64-linux": {
-        "hash": "sha256-s2SO+dDmTtfYcwvfkSpgCMDaFkF4yjE+9jWrnpvkBCg=",
-        "publishedAt": "2026-11-24T13:18:15Z",
-        "url": "https://github.com/nanomatters/proton-salkim/releases/download/wineland-11.0-20261124/proton-wineland-11.0-20261124-x86_64.tar.xz"
+        "hash": "sha256-8oCGXXLJrillXGVkup/B2BA15ZCcgRSoSXHZxheSk6Y=",
+        "publishedAt": "2026-11-27T16:45:35Z",
+        "url": "https://github.com/nanomatters/proton-salkim/releases/download/wineland-11.0-20261127/proton-wineland-11.0-20261127-x86_64.tar.xz"
       }
     },
     "homepage": "https://github.com/nanomatters/proton-salkim",
     "versions": {
-      "x86_64-linux": "wineland-11.0-20261124"
+      "x86_64-linux": "wineland-11.0-20261127"
     }
   },
   "proton-wineland-v3-bin": {
     "assets": {
       "x86_64-linux": {
-        "hash": "sha256-yP8K+pa4nmmjMV3heYBApdOiWdvLXgA+HvCcVB7ZJuA=",
-        "publishedAt": "2026-11-24T13:18:15Z",
-        "url": "https://github.com/nanomatters/proton-salkim/releases/download/wineland-11.0-20261124/proton-wineland-11.0-20261124-x86_64_v3.tar.xz"
+        "hash": "sha256-lR4S/2pkxD1ha5HJVexhl+3lBZHegBoLJUIHkgcmzRk=",
+        "publishedAt": "2026-11-27T16:45:35Z",
+        "url": "https://github.com/nanomatters/proton-salkim/releases/download/wineland-11.0-20261127/proton-wineland-11.0-20261127-x86_64_v3.tar.xz"
       }
     },
     "homepage": "https://github.com/nanomatters/proton-salkim",
     "versions": {
-      "x86_64-linux": "wineland-11.0-20261124"
+      "x86_64-linux": "wineland-11.0-20261127"
     }
   },
   "proton-wineland-wow64-bin": {
     "assets": {
       "x86_64-linux": {
-        "hash": "sha256-Wsww7FNkwsle8w+lpJtChjSDHcvHJZ2LAxiWRmw+6l0=",
-        "publishedAt": "2026-11-24T13:18:15Z",
-        "url": "https://github.com/nanomatters/proton-salkim/releases/download/wineland-11.0-20261124/proton-wineland-11.0-20261124-x86_64_wow64.tar.xz"
+        "hash": "sha256-2cuB16b5J00sZ7teepNh1RXDP5CHoSDmyB/BSdFAl3I=",
+        "publishedAt": "2026-11-27T16:45:35Z",
+        "url": "https://github.com/nanomatters/proton-salkim/releases/download/wineland-11.0-20261127/proton-wineland-11.0-20261127-x86_64_wow64.tar.xz"
       }
     },
     "homepage": "https://github.com/nanomatters/proton-salkim",
     "versions": {
-      "x86_64-linux": "wineland-11.0-20261124"
+      "x86_64-linux": "wineland-11.0-20261127"
     }
   }
 }
